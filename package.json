@@ -1,0 +1,21 @@
+{
+  "name": "xhopii",
+  "version": "1.0.0",
+  "description": "Projeto Xhopii com Node.js, JavaScript e Express",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Sem testes configurados\""
+  },
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "dotenv": "^17.3.1",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  }
+}
