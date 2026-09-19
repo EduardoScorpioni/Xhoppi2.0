@@ -1,21 +1,25 @@
 {
-  "name": "xhopii",
+  "name": "xhoppi2.0",
   "version": "1.0.0",
-  "description": "Projeto Xhopii com Node.js, JavaScript e Express",
+  "description": "Esse é um novo xhoppi para as novas aulas de pw",
+  "homepage": "https://github.com/EduardoScorpioni/Xhoppi2.0#readme",
+  "bugs": {
+    "url": "https://github.com/EduardoScorpioni/Xhoppi2.0/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoScorpioni/Xhoppi2.0.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Sem testes configurados\""
+    "test": ""
   },
-  "license": "ISC",
   "dependencies": {
-    "compression": "^1.8.0",
-    "dotenv": "^17.3.1",
-    "ejs": "^3.1.10",
     "express": "^5.2.1",
-    "express-rate-limit": "^7.5.0",
-    "helmet": "^8.0.0",
-    "morgan": "^1.10.0"
+    "helmet": "^8.3.0"
   }
 }
