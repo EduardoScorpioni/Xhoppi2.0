@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <title>Xhopii - Produto</title>
+</head>
+<body>
+    <header>
+        <section id="cabecalho-logo">
+            <img src="/img/logo.png" alt="Logo Xhopii">
+            <h1>Xhopii</h1>
+        </section>
+        <section id="cabecalho-logout">
+            <a href="/login">Sair</a>
+        </section>
+    </header>
+
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/clientes/cadastrar">Cadastro Cliente</a></li>
+            <li><a href="/funcionario/cadastrar">Cadastro Funcionário</a></li>
+            <li><a href="/produto/cadastrar">Cadastro Produto</a></li>
+            <li><a href="/clientes">Ver Clientes</a></li>
+            <li><a href="/funcionarios">Ver Funcionários</a></li>
+            <li><a href="/produtos">Ver Produtos</a></li>
+        </ul>
+    </nav>
+
+    <main class="conteudo-detalhe-produto">
+        <section class="detalhe-produto-box">
+            <a href="/produtos">← Voltar aos produtos</a>
+            <section class="detalhe-produto-conteudo">
+                <img id="detalhe-imagem" alt="Imagem do produto">
+                <section>
+                    <h1 id="detalhe-nome">Carregando produto...</h1>
+                    <p id="detalhe-fabricante"></p>
+                    <p id="detalhe-descricao"></p>
+                    <p id="detalhe-valor"></p>
+                    <p id="detalhe-quantidade"></p>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2025 Xhopii. Todos os direitos acadêmicos reservados</p>
+    </footer>
+
+    <script src="/js/produto.js"></script>
+</body>
+</html>

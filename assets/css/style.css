@@ -634,6 +634,84 @@ input[type=file]::file-selector-button:hover {
     font-weight: bold;
 }
 
+.lista-pessoas{
+    width: 60%;
+    padding: 0;
+    margin-bottom: 50px;
+    list-style: none;
+}
+
+.lista-pessoas li{
+    background-color: white;
+    padding: 18px 22px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.conteudo-cadastro .conteudo-formulario-cadastro select{
+    display: block;
+    width: 60%;
+    height: 40px;
+    margin: 25px 20%;
+    border: 1px solid rgba(0,0,0,.15);
+    background-color: white;
+}
+
+.nome-produto{
+    font-weight: bold;
+}
+
+.detalhe-produto{
+    line-height: 1.4;
+}
+
+.produto-item-info .valor-produto,
+.ver-produto-item-info .valor-produto{
+    color: rgb(251, 119, 48);
+}
+
+.produto-item-info .disponiveis-produto,
+.ver-produto-item-info .disponiveis-produto{
+    color: rgb(130,130,130);
+}
+
+.conteudo-detalhe-produto{
+    background-color: rgb(195,195,195);
+    padding: 35px 10%;
+}
+
+.detalhe-produto-box{
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.detalhe-produto-box a{
+    color: rgb(251,86,48);
+    text-decoration: none;
+}
+
+.detalhe-produto-conteudo{
+    display: flex;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.detalhe-produto-conteudo img{
+    width: 40%;
+    object-fit: contain;
+}
+
+.detalhe-produto-conteudo h1,
+#detalhe-valor{
+    color: rgb(251,86,48);
+}
+
+.detalhe-produto-conteudo p{
+    margin: 18px 0;
+}
+
 .rodape{
     width: 80%;
     height: 400px;
@@ -668,7 +746,8 @@ input[type=file]::file-selector-button:hover {
     margin-bottom: 1.5rem;
 }
 
-.rodape .conteudo-rodape-info .conteudo-rodape a{
+.rodape .conteudo-rodape-info .conteudo-rodape a,
+.rodape .conteudo-rodape-info .conteudo-rodape .texto-rodape{
     color: rgba(0,0,0,.65);
     text-decoration: none;
     font-size: .75rem;

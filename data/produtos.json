@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nome": "Camisa Dev Preta",
+    "fabricante": "Xhopii Store",
+    "descricao": "Camiseta preta com estampa de código para quem gosta de programação.",
+    "valor": 59.9,
+    "quantidade": 171,
+    "imagem": "/img/produto1.png"
+  },
+  {
+    "id": 2,
+    "nome": "Camisa Dev Azul",
+    "fabricante": "Xhopii Store",
+    "descricao": "Camiseta azul marinho confortável para o dia a dia.",
+    "valor": 64.9,
+    "quantidade": 86,
+    "imagem": "/img/produto2.png"
+  },
+  {
+    "id": 3,
+    "nome": "Camisa Dev Verde",
+    "fabricante": "Xhopii Store",
+    "descricao": "Camiseta verde com estampa inspirada em CSS.",
+    "valor": 62.5,
+    "quantidade": 54,
+    "imagem": "/img/produto3.png"
+  },
+  {
+    "id": 4,
+    "nome": "Camisa Dev Cinza",
+    "fabricante": "Xhopii Store",
+    "descricao": "Camiseta cinza versátil com estampa de programação.",
+    "valor": 57.9,
+    "quantidade": 92,
+    "imagem": "/img/produto4.png"
+  },
+  {
+    "id": 5,
+    "nome": "Camisa Dev Rosa",
+    "fabricante": "Xhopii Store",
+    "descricao": "Camiseta rosa com estampa de código e tecido leve.",
+    "valor": 65,
+    "quantidade": 38,
+    "imagem": "/img/produto5.png"
+  }
+]

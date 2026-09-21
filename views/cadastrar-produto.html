@@ -25,22 +25,28 @@
             <li><a href="/funcionario/cadastrar">Cadastro Funcionário</a></li>
             <li><a href="/produto/cadastrar">Cadastro Produto</a></li>
             <li><a href="/clientes">Ver Clientes</a></li>
-            <li><a href="#">Ver Funcionários</a></li>
-            <li><a href="#">Ver Produtos</a></li>
+            <li><a href="/funcionarios">Ver Funcionários</a></li>
+            <li><a href="/produtos">Ver Produtos</a></li>
         </ul>
     </nav>
 
     <section class="conteudo-cadastro">
         <section class="conteudo-formulario-cadastro">
-            <form method="POST" action="">
+            <form method="POST" action="/produtos">
                 <label>Cadastrar Produto</label>
-                <input type="text" placeholder="Nome" name="inputNomeProd">
-                <input type="text" placeholder="Fabricante" name="inputFabricanteProd">
-                <input type="text" placeholder="Descrição" name="inputDescricaoProd">
-                <input type="text" placeholder="Valor" name="inputValorProd">
-                <input type="text" placeholder="Quantidade" name="inputQtdProd">
-                <label id="lbl-arquivo" for="files">Selecionar foto do produto:</label>
-                <input type="file" name="inputFoto">
+                <input type="text" placeholder="Nome" name="inputNomeProd" required>
+                <input type="text" placeholder="Fabricante" name="inputFabricanteProd" required>
+                <input type="text" placeholder="Descrição" name="inputDescricaoProd" required>
+                <input type="number" step="0.01" min="0" placeholder="Valor" name="inputValorProd" required>
+                <input type="number" min="0" placeholder="Quantidade" name="inputQtdProd" required>
+                <label for="foto-produto">Imagem do produto:</label>
+                <select id="foto-produto" name="inputFoto">
+                    <option value="/img/produto1.png">Camisa preta</option>
+                    <option value="/img/produto2.png">Camisa azul</option>
+                    <option value="/img/produto3.png">Camisa verde</option>
+                    <option value="/img/produto4.png">Camisa cinza</option>
+                    <option value="/img/produto5.png">Camisa rosa</option>
+                </select>
                 <input id="botao" type="submit" value="Cadastrar">
             </form>
         </section>
@@ -50,25 +56,25 @@
         <section class="conteudo-rodape-info">
             <section class="conteudo-rodape">
                 <h5 id="rodape-titulo">Atendimento ao cliente</h5>
-                <a href="#">Central de Ajuda</a>
-                <a href="#">Como Comprar</a>
-                <a href="#">Métodos de Paramento</a>
-                <a href="#">Garantia Xhopii</a>
-                <a href="#">Devolução e Reembolso</a>
-                <a href="#">Fale Conosco</a>
-                <a href="#">Ouridoria</a>
-                <a href="#">Preferências de cookies</a>
+                <span class="texto-rodape">Central de Ajuda</span>
+                <span class="texto-rodape">Como Comprar</span>
+                <span class="texto-rodape">Métodos de Paramento</span>
+                <span class="texto-rodape">Garantia Xhopii</span>
+                <span class="texto-rodape">Devolução e Reembolso</span>
+                <span class="texto-rodape">Fale Conosco</span>
+                <span class="texto-rodape">Ouridoria</span>
+                <span class="texto-rodape">Preferências de cookies</span>
             </section>
             <section class="conteudo-rodape">
                 <h5 id="rodape-titulo">Sobre a Xhopii</h5>
-                <a href="#">Sobre Nós</a>
-                <a href="#">Políticas Xhopii</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Programa de Ailiados da Xhopii</a>
-                <a href="#">Seja um Entregador Xhopii</a>
-                <a href="#">Ofertas Relâmpago</a>
-                <a href="#">Xhopii Blog</a>
-                <a href="#">Impresa</a>
+                <span class="texto-rodape">Sobre Nós</span>
+                <span class="texto-rodape">Políticas Xhopii</span>
+                <span class="texto-rodape">Política de Privacidade</span>
+                <span class="texto-rodape">Programa de Ailiados da Xhopii</span>
+                <span class="texto-rodape">Seja um Entregador Xhopii</span>
+                <span class="texto-rodape">Ofertas Relâmpago</span>
+                <span class="texto-rodape">Xhopii Blog</span>
+                <span class="texto-rodape">Impresa</span>
             </section>
             <section class="conteudo-rodape">
                 <h5 id="rodape-titulo">Pagamento</h5>
@@ -84,11 +90,11 @@
             </section>
             <section class="conteudo-rodape">
                 <h5 id="rodape-titulo">Siga-nos</h5>
-                <a href="#"><img id="img-sociais" src="/img/logo-instagram.png">Instagram</a>
-                <a href="#"><img id="img-sociais" src="/img/logo-tiktok.png">Tik Tok</a>
-                <a href="#"><img id="img-sociais" src="/img/logo-twitter.png">X/Twitter</a>
-                <a href="#"><img id="img-sociais" src="/img/logo-facebook.png">Facebook</a>
-                <a href="#"><img id="img-sociais" src="/img/logo-linkedln.png">Linkedln</a>
+                <span class="texto-rodape"><img id="img-sociais" src="/img/logo-instagram.png">Instagram</span>
+                <span class="texto-rodape"><img id="img-sociais" src="/img/logo-tiktok.png">Tik Tok</span>
+                <span class="texto-rodape"><img id="img-sociais" src="/img/logo-twitter.png">X/Twitter</span>
+                <span class="texto-rodape"><img id="img-sociais" src="/img/logo-facebook.png">Facebook</span>
+                <span class="texto-rodape"><img id="img-sociais" src="/img/logo-linkedln.png">Linkedln</span>
             </section>
             <section class="conteudo-rodape">
                 <h5 id="rodape-titulo">Atendimento ao cliente</h5>

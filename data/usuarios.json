@@ -1,10 +1,63 @@
 [
-    {
-        "email": "aluno@gmail.com",
-        "senha": "123456"
-    },
-    {
-        "email": "igor@gmail.com",
-        "senha": "123456"
-    }
+  {
+    "email": "aluno@gmail.com",
+    "senha": "123456"
+  },
+  {
+    "email": "igor@gmail.com",
+    "senha": "123456"
+  },
+  {
+    "nome": "aaaaa",
+    "sobrenome": "aaaaa",
+    "cpf": "99999999999",
+    "dataNascimento": "2000-12-13",
+    "telefone": "18988224039",
+    "email": "ighormarques21@gmail.com",
+    "senha": "123456"
+  },
+  {
+    "tipo": "cliente",
+    "nome": "Ana",
+    "sobrenome": "Costa",
+    "cpf": "000.000.000-00",
+    "dataNascimento": "1998-04-10",
+    "telefone": "(11) 90000-0001",
+    "email": "ana.cliente@example.com",
+    "senha": "teste123"
+  },
+  {
+    "tipo": "cliente",
+    "nome": "Bruno",
+    "sobrenome": "Almeida",
+    "cpf": "000.000.000-00",
+    "dataNascimento": "2001-07-22",
+    "telefone": "(11) 90000-0002",
+    "email": "bruno.cliente@example.com",
+    "senha": "teste123"
+  },
+  {
+    "tipo": "funcionario",
+    "nome": "Marina",
+    "sobrenome": "Rocha",
+    "cpf": "000.000.000-00",
+    "dataNascimento": "1995-03-15",
+    "telefone": "(11) 90000-0003",
+    "cargo": "Atendimento",
+    "salario": "2500",
+    "email": "marina.funcionario@example.com",
+    "senha": "teste123"
+  },
+  {
+    "tipo": "funcionario",
+    "nome": "Pedro",
+    "sobrenome": "Lima",
+    "cpf": "000.000.000-00",
+    "dataNascimento": "1993-11-08",
+    "telefone": "(11) 90000-0004",
+    "cargo": "Estoque",
+    "salario": "2300",
+    "email": "pedro.funcionario@example.com",
+    "senha": "teste123"
+  }
 ]
