@@ -1,0 +1,14 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-visualizar">
+    <section class="conteudo-visualizar-box">
+        <h1><%= titulo %></h1>
+        <section class="conteudo-bloco">
+            <h2><%= mensagem %></h2>
+            <p><a href="<%= link %>"><%= textoLink %></a></p>
+        </section>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

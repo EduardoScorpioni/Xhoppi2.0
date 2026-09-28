@@ -1,0 +1,31 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-home">
+    <section class="conteudo-home-carousel">
+        <img id="img-carousel" src="/img/carousel-1.jpg">
+    </section>
+    <img src="/img/home-promocao.png">
+    <section class="conteudo-home-descobertas">
+        <section class="conteudo-home-descobertas-titulo">
+            <h1>Descobertas do dia</h1>
+            <hr>
+        </section>
+        <section class="conteudo-home-descobertas-produto">
+            <% produtos.forEach(produto => { %>
+                <a href="/produtos/<%= produto.codigo %>" class="produto-item-grid">
+                    <section>
+                        <img src="<%= produto.imagem %>">
+                        <p><%= produto.nome %></p>
+                        <section class="produto-item-info">
+                            <p id="valor"><%= Number(produto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></p>
+                            <p id="disponiveis"><%= produto.quantidade %> disponíveis</p>
+                        </section>
+                    </section>
+                </a>
+            <% }); %>
+        </section>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

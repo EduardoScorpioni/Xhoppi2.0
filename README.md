@@ -1,69 +1,117 @@
 # Xhoppi2.0
 
-Projeto acadêmico desenvolvido com Node.js, Express, HTML, CSS e JavaScript.
+Projeto acadêmico desenvolvido com Node.js, Express, EJS e MongoDB.
 
 ## Integrantes
 
 - Eduardo Viccino Scorpioni
 - Igor Marques da Silva
 
-## Como executar
+## O que foi preservado
+
+O HTML, o CSS, as fontes e as imagens seguem o projeto original de `xhopii.zip`. As páginas foram renomeadas para `.ejs` para receber os dados consultados no MongoDB. As mudanças nos links servem somente para ligar os formulários e o menu às rotas existentes.
+
+## Preparação
+
+1. Instale as dependências:
 
 ```bash
 npm install
+```
+
+2. Crie o arquivo `.env` a partir de `.env.example`:
+
+```env
+PORT=3000
+MONGODB_URI=mongodb://127.0.0.1:27017/xhoppi
+```
+
+3. Inicie o MongoDB.
+
+4. Importe os dados de exemplo dos arquivos JSON para o banco:
+
+```bash
+npm run seed
+```
+
+5. Inicie o projeto:
+
+```bash
 npm start
 ```
 
-O projeto lê a porta do arquivo `.env`. A configuração padrão é `PORT=3000`.
-Abra `http://localhost:3000` no navegador.
-O arquivo `.env.example` mostra a configuração necessária para quem clonar o repositório.
+6. Abra `http://localhost:3000`.
+
+O comando `npm run seed` pode ser executado novamente. Ele usa `upsert`, então não duplica usuários com o mesmo email nem produtos com o mesmo código.
+
+## MongoDB neste computador
+
+Este computador usa Windows 10 22H2 e está com o MongoDB Community Server 6.0.29 instalado. O serviço `MongoDB` inicia automaticamente com o Windows e atende localmente em `127.0.0.1:27017`.
+
+O MongoDB 6.0 foi escolhido porque o MongoDB 8.3 não executa neste sistema. A versão 6.0 já encerrou seu período oficial de suporte e deve ser usada somente para este projeto acadêmico local. Para um projeto publicado, use uma versão mantida em um sistema operacional compatível ou o MongoDB Atlas.
+
+## Estrutura MVC
+
+```text
+config/         conexão com o MongoDB
+controllers/    regras das páginas, consultas e cadastros
+models/         schemas do Mongoose
+routes/         endereços GET e POST
+views/          páginas EJS e partials reutilizáveis
+middlewares/    configuração do Express e tratamento de erros
+assets/         CSS, fontes e imagens originais
+data/           dados de exemplo usados somente pelo seed
+scripts/        importação inicial dos dados
+server.js       inicialização da aplicação
+```
+
+O caminho de uma requisição é:
+
+```text
+Navegador -> rota -> controller -> model -> MongoDB
+                                 -> view EJS -> HTML
+```
 
 ## Rotas
 
 | Método | Rota | Função |
 | --- | --- | --- |
-| GET | `/` | Página inicial e produtos do JSON |
-| GET/POST | `/login` | Página e processamento do login |
-| GET/POST | `/recuperar-senha` | Formulário de recuperação |
-| GET | `/clientes/cadastrar` | Formulário de cliente |
-| GET/POST | `/clientes` | Lista e cadastro de clientes |
-| GET | `/clientes/dados` | Dados públicos dos clientes em JSON |
-| GET | `/funcionarios/cadastrar` | Formulário de funcionário |
-| GET/POST | `/funcionarios` | Lista e cadastro de funcionários |
-| GET | `/funcionarios/dados` | Dados públicos dos funcionários em JSON |
-| GET | `/produtos/cadastrar` | Formulário de produto |
-| GET/POST | `/produtos` | Lista e cadastro de produtos |
-| GET | `/produtos/dados` | Produtos em JSON |
-| GET | `/produtos/:id` | Visualização individual do produto |
+| GET | `/` | Exibe a home com produtos do MongoDB |
+| GET/POST | `/login` | Exibe e processa o login |
+| GET/POST | `/recuperar-senha` | Exibe e processa a recuperação |
+| GET | `/clientes/cadastrar` | Exibe o cadastro de cliente |
+| GET/POST | `/clientes` | Lista ou cadastra clientes |
+| GET | `/clientes/dados` | Retorna clientes em JSON |
+| GET | `/funcionarios/cadastrar` | Exibe o cadastro de funcionário |
+| GET/POST | `/funcionarios` | Lista ou cadastra funcionários |
+| GET | `/funcionarios/dados` | Retorna funcionários em JSON |
+| GET | `/produtos/cadastrar` | Exibe o cadastro de produto |
+| GET/POST | `/produtos` | Lista ou cadastra produtos |
+| GET | `/produtos/dados` | Retorna produtos em JSON |
+| GET | `/produtos/:id` | Exibe um produto pelo código |
 
-Os POSTs aceitam dados de formulários HTML e também JSON enviado pelo Postman.
+## Como o EJS funciona aqui
 
-As listagens continuam em HTML comum, conforme o conteúdo trabalhado em sala. O JavaScript do navegador usa `fetch` para carregar os dados das rotas `/dados`, então o projeto não depende de EJS.
+- `<%= valor %>` mostra um valor escapado no HTML.
+- `<% codigo %>` executa JavaScript sem imprimir.
+- `<%- include(...) %>` inclui um partial.
+- `res.render('home', { produtos })` abre `views/home.ejs` e envia a variável `produtos`.
 
-## Estrutura
+Os arquivos `views/partials/head.ejs`, `header.ejs` e `footer.ejs` evitam repetir as partes comuns. Quando o EJS termina de renderizar, o navegador recebe HTML normal.
 
-- `server.js`: inicia o Express e registra os grupos de rotas.
-- `routes/`: rotas de autenticação, clientes, funcionários e produtos.
-- `middlewares/`: arquivos estáticos, leitura dos formulários e JSON, Helmet, Compression, Morgan e limites de requisição.
-- `utils/pathUtils.js`: caminhos absolutos do projeto em ES Modules.
-- `data/usuarios.json`: clientes, funcionários e usuários do login.
-- `data/produtos.json`: produtos cadastrados.
-- `views/`: páginas HTML.
-- `assets/`: CSS, JavaScript, fontes e imagens.
+## Como o MongoDB funciona aqui
 
-## Segurança e logs
+- `config/database.js` abre a conexão.
+- Os schemas em `models/` descrevem usuários e produtos.
+- Os controllers usam `find`, `findOne`, `exists` e `create`.
+- O Mongoose grava os documentos nas coleções `usuarios` e `produtos`.
+- Os arquivos em `data/` não são alterados durante o uso do site; eles servem apenas para a primeira importação.
 
-- O limite geral aceita até 100 requisições a cada 10 minutos por IP.
-- O POST `/login` aceita até 5 tentativas a cada 10 minutos por IP.
-- O Morgan grava método, rota, status, IP, data e navegador em `access.log`.
-- Helmet adiciona cabeçalhos de segurança e Compression compacta as respostas.
+## Limites para testes
 
-O arquivo `access.log`, o `.env` e `node_modules` não são enviados ao Git.
+- Limite geral: 10.000 requisições a cada 10 minutos por IP.
+- Login: 1.000 tentativas a cada 10 minutos por IP.
 
-## Testes no Postman
+## Observação acadêmica
 
-Teste os GETs da tabela e envie os cadastros com `Body > x-www-form-urlencoded` ou `Body > raw > JSON`. Para testar o limite do login, faça seis POSTs seguidos em `/login`; a sexta resposta deve ter status `429`.
-
-As imagens de produto são escolhidas entre os arquivos presentes em `assets/img`. A recuperação de senha apenas confirma o recebimento porque o projeto não possui serviço de email. O upload de arquivos também ficou fora desta etapa, conforme o conteúdo das aulas.
-
-Os usuários de exemplo são fictícios. Use apenas senhas de teste, pois este exercício acadêmico grava as senhas em texto simples no JSON.
+As senhas continuam em texto simples para manter o conteúdo no nível atual do trabalho. Em um sistema real, elas precisam ser transformadas com hash e o login precisa usar sessão.

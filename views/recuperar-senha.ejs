@@ -1,0 +1,25 @@
+<%- include('partials/head', { titulo }) %>
+
+<header class="cabecalho-login">
+    <section id="cabecalho-login-logo">
+        <img src="/img/logo.png">
+        <h1>Xhopii</h1>
+        <p>Redefinir senha</p>
+    </section>
+    <section id="cabecalho-login-ajuda">
+        <p>Precisa de ajuda?</p>
+    </section>
+</header>
+
+<section class="conteudo-redefinir-senha">
+    <section class="form-redefinir-senha">
+        <a href="/login"><img src="/img/icon-back.png"></a>
+        <form class="form-redefinir" method="POST" action="/recuperar-senha">
+            <label id="label-log">Redefinir senha</label>
+            <input id="input-log" type="text" placeholder="Email" name="inputEmailLog">
+            <input id="botao-log" type="submit" value="Enviar">
+        </form>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,21 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-visualizar">
+    <section class="conteudo-visualizar-box">
+        <h1>Funcionários</h1>
+        <% funcionarios.forEach(funcionario => { %>
+            <section class="conteudo-bloco">
+                <h2><%= funcionario.nome %> <%= funcionario.sobrenome || '' %></h2>
+                <p>CPF: <%= funcionario.cpf || '' %></p>
+                <p>Data Nascimento: <%= funcionario.dataNascimento ? new Date(funcionario.dataNascimento).toLocaleDateString('pt-BR') : '' %></p>
+                <p>Telefone: <%= funcionario.telefone || '' %></p>
+                <p>Cargo / Função: <%= funcionario.cargo || '' %></p>
+                <p>Salário: <%= funcionario.salario == null ? '' : Number(funcionario.salario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></p>
+                <p>E-mail: <%= funcionario.email %></p>
+            </section>
+        <% }); %>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

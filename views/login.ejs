@@ -1,0 +1,41 @@
+<%- include('partials/head', { titulo }) %>
+
+<header class="cabecalho-login">
+    <section id="cabecalho-login-logo">
+        <img src="/img/logo.png">
+        <h1>Xhopii</h1>
+        <p>Entre</p>
+    </section>
+    <section id="cabecalho-login-ajuda">
+        <p>Precisa de ajuda?</p>
+    </section>
+</header>
+
+<section class="conteudo-login">
+    <section class="conteudo-login-info">
+        <%- include('partials/erro-formulario', { erro }) %>
+        <form class="form-login" method="POST" action="/login">
+            <label id="label-log">Login</label>
+            <input id="input-log" type="text" placeholder="Email" name="inputEmailLog">
+            <input id="input-log" type="password" placeholder="Senha" name="inputSenhaLog">
+            <input id="botao-log" type="submit" value="ENTRE">
+        </form>
+        <section class="conteudo-login-recuperacao">
+            <a href="/recuperar-senha">Esqueci minha senha</a>
+            <a href="#">Fazer login com SMS</a>
+        </section>
+        <section class="conteudo-login-alegoria">
+            <hr>
+            <p>Ou</p>
+            <hr>
+        </section>
+        <section class="conteudo-login-sociais">
+            <button><img src="/img/logo-facebook-cicle.png">Facebook</button>
+            <button><img src="/img/logo-google.png">Google</button>
+            <button><img src="/img/logo-apple.png">Apple</button>
+        </section>
+        <p>Novo na Xhopii? <a href="/clientes/cadastrar">Cadastrar</a></p>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

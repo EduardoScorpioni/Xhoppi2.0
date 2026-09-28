@@ -1,0 +1,19 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-visualizar">
+    <section class="conteudo-visualizar-box">
+        <h1>Clientes</h1>
+        <% clientes.forEach(cliente => { %>
+            <section class="conteudo-bloco">
+                <h2><%= cliente.nome %> <%= cliente.sobrenome || '' %></h2>
+                <p>CPF: <%= cliente.cpf || '' %></p>
+                <p>Data Nascimento: <%= cliente.dataNascimento ? new Date(cliente.dataNascimento).toLocaleDateString('pt-BR') : '' %></p>
+                <p>Telefone: <%= cliente.telefone || '' %></p>
+                <p>E-mail: <%= cliente.email %></p>
+            </section>
+        <% }); %>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,25 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-cadastro">
+    <section class="conteudo-formulario-cadastro">
+        <form method="POST" action="/funcionarios">
+            <label>Cadastrar Funcionário</label>
+            <%- include('partials/erro-formulario', { erro }) %>
+            <input type="text" placeholder="Nome" name="inputNomeFunc">
+            <input type="text" placeholder="Sobrenome" name="inputSobrenomeFunc">
+            <input type="text" placeholder="CPF" name="inputCPFFunc">
+            <input type="date" placeholder="Data Nascimento" name="inputDataNascFunc">
+            <input type="text" placeholder="Telefone" name="inputTelefoneFunc">
+            <input type="text" placeholder="Cargo / Função" name="inputCargoFunc">
+            <input type="text" placeholder="Salário" name="inputSalarioFunc">
+            <input type="text" placeholder="Email" name="inputEmailFunc">
+            <input type="password" placeholder="Senha" name="inputSenha">
+            <label id="lbl-arquivo" for="files">Selecionar foto de perfil:</label>
+            <input type="file" name="inputFoto">
+            <input id="botao" type="submit" value="Cadastrar">
+        </form>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

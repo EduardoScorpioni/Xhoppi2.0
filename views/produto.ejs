@@ -1,0 +1,25 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="produto-imagem">
+    <section class="produto-miniatura">
+        <img src="<%= produto.imagem %>">
+        <img src="<%= produto.imagem %>">
+        <img src="<%= produto.imagem %>">
+    </section>
+    <section class="produto-principal">
+        <img src="<%= produto.imagem %>">
+    </section>
+</section>
+
+<section class="produto-detalhes">
+    <h1><%= produto.nome %></h1>
+    <p>Fabricante: <%= produto.fabricante %></p>
+    <p><%= produto.descricao %></p>
+    <p id="precoProduto"><%= Number(produto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></p>
+    <p><%= produto.quantidade %> disponíveis</p>
+    <button class="botao">Adicionar ao carrinho</button>
+    <button id="botaoComprar">Comprar agora</button>
+</section>
+
+<%- include('partials/footer') %>

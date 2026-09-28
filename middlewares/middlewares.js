@@ -9,7 +9,7 @@ import { raizProjeto } from '../utils/pathUtils.js';
 
 const limiteGeral = rateLimit({
     windowMs: 10 * 60 * 1000,
-    limit: 100,
+    limit: 10000,
     standardHeaders: true,
     legacyHeaders: false,
     message: 'Muitas requisições. Tente novamente em alguns minutos.'
@@ -17,7 +17,7 @@ const limiteGeral = rateLimit({
 
 export const limiteLogin = rateLimit({
     windowMs: 10 * 60 * 1000,
-    limit: 5,
+    limit: 1000,
     standardHeaders: true,
     legacyHeaders: false,
     message: 'Muitas tentativas de login. Tente novamente em 10 minutos.'

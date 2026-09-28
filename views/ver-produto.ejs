@@ -1,0 +1,34 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-ver">
+    <section class="conteudo-ver-descobertas">
+        <section class="conteudo-ver-descobertas-titulo">
+            <h1>Produtos</h1>
+        </section>
+        <section class="conteudo-ver-descobertas-produto">
+            <% produtos.forEach(produto => { %>
+                <a href="/produtos/<%= produto.codigo %>" class="ver-produto-item-grid">
+                    <section class="ver-produto-detalhes">
+                        <img src="<%= produto.imagem %>">
+                        <p id="nome-produto"><%= produto.nome %></p>
+                        <section class="ver-grupo-dupla-grid">
+                            <h5 id="titulo-produto">Fabricante: </h5>
+                            <p id="info-produto"><%= produto.fabricante %></p>
+                        </section>
+                        <section class="ver-grupo-dupla-grid">
+                            <h5 id="titulo-produto">Descrição:</h5>
+                            <p id="info-produto"><%= produto.descricao %></p>
+                        </section>
+                        <section class="ver-produto-item-info">
+                            <p id="valor"><%= Number(produto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></p>
+                            <p id="disponiveis"><%= produto.quantidade %> disponíveis</p>
+                        </section>
+                    </section>
+                </a>
+            <% }); %>
+        </section>
+    </section>
+</section>
+
+<%- include('partials/footer') %>

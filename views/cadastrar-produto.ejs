@@ -1,0 +1,21 @@
+<%- include('partials/head', { titulo }) %>
+<%- include('partials/header') %>
+
+<section class="conteudo-cadastro">
+    <section class="conteudo-formulario-cadastro">
+        <form method="POST" action="/produtos">
+            <label>Cadastrar Produto</label>
+            <%- include('partials/erro-formulario', { erro }) %>
+            <input type="text" placeholder="Nome" name="inputNomeProd">
+            <input type="text" placeholder="Fabricante" name="inputFabricanteProd">
+            <input type="text" placeholder="Descrição" name="inputDescricaoProd">
+            <input type="text" placeholder="Valor" name="inputValorProd">
+            <input type="text" placeholder="Quantidade" name="inputQtdProd">
+            <label id="lbl-arquivo" for="files">Selecionar foto do produto:</label>
+            <input type="file" name="inputFoto">
+            <input id="botao" type="submit" value="Cadastrar">
+        </form>
+    </section>
+</section>
+
+<%- include('partials/footer') %>
